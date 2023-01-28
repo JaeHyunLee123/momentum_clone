@@ -1,8 +1,7 @@
 const clock = document.querySelector("#clock");
-
-function sayHello() {
-  console.log("hello");
-}
+const currentTime = document.querySelector(".current-time");
+const pomodoro = document.querySelector(".pomodoro");
+const toggleButton = document.querySelectorAll(".time__toggle-button");
 
 function showClock() {
   const date = new Date();
@@ -13,5 +12,13 @@ function showClock() {
   clock.innerText = `${hour}:${minute}:${second}`;
 }
 
+function switchMode() {
+  currentTime.classList.toggle("hidden");
+  pomodoro.classList.toggle("hidden");
+}
+
 showClock();
 setInterval(showClock, 1000);
+
+toggleButton[0].addEventListener("click", switchMode);
+toggleButton[1].addEventListener("click", switchMode);

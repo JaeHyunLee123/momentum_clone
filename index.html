@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Momnentum</title>
+
+    <link rel="shortcut icon" href="img/focus-circle.png" />
+    <title>Focus</title>
 
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/f51143ee06.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
@@ -16,7 +22,27 @@
     </header>
 
     <main>
-      <h2 id="clock">00:00</h2>
+      <div class="time">
+        <div class="current-time">
+          <h2 id="clock">00:00</h2>
+          <button class="time__toggle-button">Start pomodoro</button>
+        </div>
+        <div class="pomodoro hidden">
+          <h2 id="stopwatch">25:00</h2>
+          <div class="pomodoro__buttons">
+            <button class="time__toggle-button">Turn to clock</button>
+            <button class="pomodoro__pause-button">
+              <i class="fa-solid fa-pause"></i>
+            </button>
+            <button class="pomodoro__start-button">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <button class="pomodoro__reset-button">
+              <i class="fa-solid fa-repeat"></i>
+            </button>
+          </div>
+        </div>
+      </div>
 
       <form id="login-form" class="hidden">
         <input
@@ -51,5 +77,6 @@
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/stopwatch.js"></script>
   </body>
 </html>
