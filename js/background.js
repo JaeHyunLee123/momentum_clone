@@ -12,6 +12,6 @@ const setBackgroundImageSize = () => {
   }
 };
 
-document.body.style.backgroundImage = `url("../img/${choosenImage}")`;
+document.body.style.backgroundImage = `url("img/${choosenImage}")`;
 
 window.addEventListener("resize", setBackgroundImageSize);
