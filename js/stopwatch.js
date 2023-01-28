@@ -20,11 +20,11 @@ function displayStopwatch(minute, second) {
 function reduceOneSecond() {
   if (focusTime.minutes === 0 && focusTime.seconds === 0) {
     if (isFocus) {
-      focusTime.minutes = 25;
+      focusTime.minutes = 5;
       focusTime.seconds = 0;
       isFocus = false;
     } else {
-      focusTime.minutes = 5;
+      focusTime.minutes = 25;
       focusTime.seconds = 0;
       isFocus = true;
     }
