@@ -1,0 +1,52 @@
+WeatherInfo: {
+  shape: class
+
+  weather: "Weather[]"
+  main: Main
+  name: string
+}
+
+Weather: {
+  shape: class
+
+  id: number
+  main: string
+  description: string
+}
+
+Main: {
+  shape: class
+
+  temp: number
+  feels_like: number
+  temp_min: number
+  temp_max: number
+  pressure: number
+  humidity: number
+}
+
+WeatherInfo.weather -> Weather: one to many
+WeatherInfo.Main -> Main: one to one
+
+LocalStorage: {
+  shape: class
+
+  todos: "Todo[]"
+  user_name: string
+}
+
+Todo: {
+  shape: class
+
+  id: Date
+  text: string
+}
+
+LocalStorage.todos -> Todo
+
+Quote: {
+  shape: class
+
+  quote: string
+  author: string
+}

@@ -1,0 +1,28 @@
+Todo: {
+  shape: sequence_diagram
+
+  user: User
+  html
+  local_storage
+
+  user.shape: person
+  local_storage.shape: cylinder
+
+  Initial: {
+    local_storage -> html -> user: stored data
+  }
+
+  During: {
+    user -> html -> local_storage: send data
+  }
+}
+
+Weather: {
+  shape: sequence_diagram
+
+  Frontend
+  OpenWeatherAPI
+
+  Frontend -> OpenWeatherAPI: latitude & longitude
+  OpenWeatherAPI -> Frontend: weather information
+}
