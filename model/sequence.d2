@@ -9,11 +9,15 @@ Todo: {
   local_storage.shape: cylinder
 
   Initial: {
-    local_storage -> html -> user: stored data
+    local_storage -> html: stored data
+    html -> user: show data
   }
 
   During: {
-    user -> html -> local_storage: send data
+    user -> html: new data / delete data
+    html -> local_storage: update
+    local_storage -> html: updated data
+    html -> user: show data
   }
 }
 
@@ -25,4 +29,14 @@ Weather: {
 
   Frontend -> OpenWeatherAPI: latitude & longitude
   OpenWeatherAPI -> Frontend: weather information
+}
+
+Pomodoro: {
+  shape: sequence_diagram
+
+  user: User
+  Pomodoro
+
+  user -> Pomodoro: event
+  Pomodoro -> user: current time
 }
