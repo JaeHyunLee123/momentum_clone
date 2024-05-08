@@ -1,0 +1,42 @@
+direction: right
+
+Pomodoro: {
+  Waiting: {
+    do: do: display time
+  }
+
+  FocusTime: {
+    do: do: set timer 25
+  }
+
+  RestTime: {
+    do: do: set timer 5
+  }
+
+  SetTime: {
+    do: do: get number
+    exit: set time
+
+    do -> exit: number
+  }
+
+  Waiting -> FocusTime: start
+  Waiting -> RestTime: start
+
+  FocusTime -> Waiting: pause
+  RestTime -> Waiting: pause
+
+  FocusTime <-> RestTime: time over
+
+  FocusTime -> SetTime: timer
+  RestTime -> SetTime: timer
+}
+
+Weather: {
+  Waiting: {
+    do: wait for user permission
+  }
+
+  Waiting -> Display: allow
+  Waiting -> Hide: denied
+}
