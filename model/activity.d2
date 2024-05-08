@@ -1,0 +1,24 @@
+direction: right
+
+User.shape: person
+LocalStorage.shape: cylinder
+
+User -> Todo: post / delete todo
+
+User -> Greating: set user name
+
+Todo -> LocalStorage: save todo
+Greating -> LocalStorage: save user name
+
+User -> Weather: location permission
+
+Random -> Background
+
+Random -> Quote
+
+Time: {
+  Pomodoro <-> Clock: switch
+}
+
+User -> Time: switch
+User -> Time.Pomodoro: start / pause / reset
